@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "node node_modules/puppeteer-core/install.js",
     "start": "node index.js",
     "dev": "node  --watch index.js",
     "test": "echo \"Error: no test specified\" && exit 1"

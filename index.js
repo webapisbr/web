@@ -12,7 +12,7 @@ router.get('/', async (req, res)=>{
     let result = null;
     let browser = null;
     console.log(await chromium.executablePath)
-    
+
     try {
       browser = await chromium.puppeteer.launch({
         args: chromium.args,
@@ -24,7 +24,7 @@ router.get('/', async (req, res)=>{
   
       let page = await browser.newPage();
   
-      await page.goto(event.url || 'https://example.com');
+      await page.goto('https://cyclic.sh');
   
       result = await page.title();
     } catch (error) {
