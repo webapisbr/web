@@ -1,11 +1,12 @@
-const {Builder} = require('selenium-webdriver');
-require("chromedriver");
+const {Builder, Browser, By, Key, until} = require('selenium-webdriver');
 
-(async function helloSelenium() {
-  let driver = await new Builder().forBrowser('chrome').build();
-
-  await driver.get('https://selenium.dev');
-  let title = await driver.getTitle();
-  console.log(title);
-  await driver.quit();
+(async function example() {
+  let driver = await new Builder().forBrowser(Browser.FIREFOX).build();
+  try {
+    await driver.get('https://www.google.com/ncr');
+    await driver.findElement(By.name('q')).sendKeys('webdriver', Key.RETURN);
+    await driver.wait(until.titleIs('webdriver - Google Search'), 1000);
+  } finally {
+    await driver.quit();
+  }
 })();
