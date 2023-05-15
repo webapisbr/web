@@ -10,16 +10,7 @@ router.get('/search', async function(req, res, next) {
             const page = await browser.newPage();
             await page.setDefaultNavigationTimeout(0);
             await page.goto('https://www.climatempo.com.br');
-            await page.setViewport({width: 1280, height: 720});
-            await page.type('.general-search-input',req.query.q,{delay: 300});
-            const results = await page.evaluate(() => {
-                const el = document.querySelectorAll('.autocomplete-list a');
-                var item = [];
-                el.forEach(el => {
-                    item.push({id: el.href.replace('https://www.climatempo.com.br/previsao-do-tempo/cidade/','').split('/')[0], name: el.textContent});
-                });
-                return item;
-            });
+            const results = await page.title();
             await browser.close();
             res.status(200).json({message: 'Sucesso', status: 200, results: results});
         }else{
