@@ -6,6 +6,9 @@
     },
     "author": "The Selenium project",
     "license": "Apache-2.0",
+    "engines": {
+    "node": "16.x"
+  },
     "dependencies": {
         "@sitespeed.io/edgedriver": "^112.0.1722-34",
         "assert": "^2.0.0",
