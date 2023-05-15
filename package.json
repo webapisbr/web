@@ -1,22 +1,16 @@
 {
-    "name": "javascript-examples",
-    "version": "1.0.0",
-    "scripts": {
-        "test": "npx mocha test/**/*.spec.js --timeout 60000"
-    },
-    "author": "The Selenium project",
-    "license": "Apache-2.0",
-    "engines": {
-    "node": "16.x"
+  "name": "selenium",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-    "dependencies": {
-        "@sitespeed.io/edgedriver": "^112.0.1722-34",
-        "assert": "^2.0.0",
-        "chromedriver": "^112.0.0",
-        "geckodriver": "^3.2.0",
-        "selenium-webdriver": "^4.9.1"
-    },
-    "devDependencies": {
-        "mocha": "^10.2.0"
-    }
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chromedriver": "^113.0.0",
+    "selenium-webdriver": "^4.9.2"
+  }
 }
